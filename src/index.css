@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-display: "Libre Baskerville", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200 min-h-screen selection:bg-indigo-500/20 antialiased;
+  }
+
+  /* Custom Range slider for glassmorphism */
+  input[type='range'] {
+    @apply h-[2px] w-full appearance-none rounded-full bg-white/5;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    @apply h-3 w-3 appearance-none rounded-full bg-slate-400 shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all cursor-pointer hover:scale-125 hover:bg-white;
+  }
+}
+
+.glass {
+  @apply backdrop-blur-[40px] bg-white/[0.02] border border-white/[0.05];
+}
+
+.text-subtle {
+  @apply text-slate-400 font-light tracking-wide italic;
+}
